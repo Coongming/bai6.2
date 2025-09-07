@@ -1,29 +1,43 @@
-<form action="survey" method="post" class="form-card">
-  <label>Email</label>
-  <input name="email" type="email" required>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Murach's Java Servlets and JSP</title>
+    <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+</head>
+<body>
+<h1>Survey</h1>
+<p>Please fill out this survey to help us improve.</p>
 
-  <label>First Name</label>
-  <input name="firstName" type="text" required>
+<form action="survey" method="post">
+    <label>Email:</label>
+    <input type="email" name="email" required/><br/>
 
-  <label>Last Name</label>
-  <input name="lastName" type="text" required>
+    <label>First Name:</label>
+    <input type="text" name="firstName" required/><br/>
 
-  <fieldset>
-    <legend>How did you hear about us?</legend>
-    <label><input type="radio" name="heardFrom" value="Search Engine" checked> Search Engine</label>
-    <label><input type="radio" name="heardFrom" value="Word of Mouth"> Word of Mouth</label>
-    <label><input type="radio" name="heardFrom" value="Social Media"> Social Media</label>
-    <label><input type="radio" name="heardFrom" value="Other"> Other</label>
-  </fieldset>
+    <label>Last Name:</label>
+    <input type="text" name="lastName" required/><br/>
 
-  <label><input type="checkbox" name="updates" value="yes"> Receive updates?</label>
+    <label>Heard From:</label>
+    <select name="heardFrom">
+        <option value="Search Engine">Search Engine</option>
+        <option value="Friend or Colleague">Friend or Colleague</option>
+        <option value="Social Media">Social Media</option>
+    </select><br/>
 
-  <label>Please contact me by</label>
-  <select name="contactVia">
-    <option>Email or postal mail</option>
-    <option>Email only</option>
-    <option>Postal mail only</option>
-  </select>
+    <label>Receive Updates:</label>
+    <input type="checkbox" name="wantsUpdates" value="Yes"/><br/>
 
-  <button type="submit">Submit</button>
+    <label>Contact Via:</label>
+    <input type="radio" name="contactVia" value="Email" checked/> Email
+    <input type="radio" name="contactVia" value="Phone"/> Phone
+    <input type="radio" name="contactVia" value="Mail"/> Mail
+    <br/>
+
+    <label>&nbsp;</label>
+    <input type="submit" value="Submit"/>
 </form>
+</body>
+</html>
