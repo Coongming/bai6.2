@@ -1,31 +1,29 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Murach's Java Servlets and JSP</title>
-    <link rel="stylesheet" href="styles/main.css" type="text/css"/>
-</head>
-<body>
-<h1>Join our email list</h1>
-<p>To join our email list, enter your name and email address below.</p>
+<form action="survey" method="post" class="form-card">
+  <label>Email</label>
+  <input name="email" type="email" required>
 
-<form action="emailList" method="post">
-    <input type="hidden" name="action" value="add"/>
+  <label>First Name</label>
+  <input name="firstName" type="text" required>
 
-    <label>Email:</label>
-    <input type="email" name="email" required/><br/>
+  <label>Last Name</label>
+  <input name="lastName" type="text" required>
 
-    <label>First Name:</label>
-    <input type="text" name="firstName" required/><br/>
+  <fieldset>
+    <legend>How did you hear about us?</legend>
+    <label><input type="radio" name="heardFrom" value="Search Engine" checked> Search Engine</label>
+    <label><input type="radio" name="heardFrom" value="Word of Mouth"> Word of Mouth</label>
+    <label><input type="radio" name="heardFrom" value="Social Media"> Social Media</label>
+    <label><input type="radio" name="heardFrom" value="Other"> Other</label>
+  </fieldset>
 
-    <label>Last Name:</label>
-    <input type="text" name="lastName" required/><br/>
+  <label><input type="checkbox" name="updates" value="yes"> Receive updates?</label>
 
-    <label>&nbsp;</label>
-    <input type="submit" value="Join Now" id="submit"/>
+  <label>Please contact me by</label>
+  <select name="contactVia">
+    <option>Email or postal mail</option>
+    <option>Email only</option>
+    <option>Postal mail only</option>
+  </select>
+
+  <button type="submit">Submit</button>
 </form>
-
-<%@ include file="includes/footer.jsp" %>
-</body>
-</html>
