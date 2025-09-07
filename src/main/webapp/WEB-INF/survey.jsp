@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<jsp:useBean id="user" class="vn.edu.hcmute.fit.demo1.User" scope="request" />
+<jsp:useBean id="user" class="murach.business.User" scope="request" />
 
 <!doctype html>
 <html>
