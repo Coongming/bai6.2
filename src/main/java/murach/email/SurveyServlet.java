@@ -1,9 +1,12 @@
 package murach.email;
+import java.io.IOException;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
-import java.io.IOException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import murach.business.User;
 
 @WebServlet("/survey")
 public class SurveyServlet extends HttpServlet {
@@ -33,6 +36,6 @@ public class SurveyServlet extends HttpServlet {
         request.setAttribute("user", user);
 
         // Trang hiển thị kết quả nằm trong WEB-INF
-        request.getRequestDispatcher("/WEB-INF/survey.jsp").forward(request, response);
+        request.getRequestDispatcher("survey.jsp").forward(request, response);
     }
 }
